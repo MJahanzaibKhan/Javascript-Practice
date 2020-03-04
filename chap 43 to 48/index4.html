@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="checkAddress();">
+        Counter Serial:
+        <input type="text" id="inp">
+    </form>
+    <br>
+    <br>
+    <button id="btn-inc" onclick="incres('increasee');">Increase</button>
+    <br>
+    <br>
+    <button id="btn-decre" onclick="incres('decreasee');">Decrease</button>
+</body>
+
+
+
+<script>
+
+    function incres(get) {
+        if (get === 'increasee') {
+            var getInputValue = document.getElementById("inp").value;
+
+            getInputValue++;
+
+            document.getElementById("inp").value = getInputValue;
+        }
+        else if (get = 'decreasee') {
+
+            var getInputValue = document.getElementById("inp").value;
+
+            getInputValue--;
+
+            document.getElementById("inp").value = getInputValue;
+        }
+
+    }
+
+
+</script>
+
+</html>

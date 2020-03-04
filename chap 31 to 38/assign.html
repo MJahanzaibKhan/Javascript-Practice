@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <script>
+    // 1. Write a program that displays current date and time in
+    // your browser.
+
+    //   var curDate = new Date();
+    //   document.write(curDate);
+
+    //       2. Write a program that alerts the current month in words.
+    // For example December.
+
+    //   var montH = [
+    //     "January",
+    //     "February",
+    //     "March",
+    //     "April",
+    //     "May",
+    //     "June",
+    //     "July",
+    //     "August",
+    //     "September",
+    //     "October",
+    //     "November",
+    //     "December"
+    //   ];
+    //   var curDate = new Date();
+    //   var curMonth = curDate.getMonth();
+    //   document.write("Current Month: " + montH[curMonth]);
+
+    //         3. Write a program that alerts the first 3 letters of the current
+    //   day, for example if today is Sunday then alert will show
+    //   Sun.
+
+    // var daY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    // var curDate = new Date();
+    // alert("Current Day: " + daY[curDate.getDay()]);
+
+    //       4. Write a program that displays a message “It’s Fun day” if
+    // its Saturday or Sunday today.
+
+
+    // var daY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    // var curDay = new Date();
+    // var checkDay = daY[curDay.getDay()];
+    // if (checkDay === "Sat" || checkDay === "Sun") {
+    //   document.write("It's Fun day");
+    // }
+    // else {
+    //   document.write("It's Working Day");
+    // }
+
+    //     5. Write a program that shows the message “First fifteen
+    //     days of the month” if the date is less than 16th of the month
+    // else shows “Last days of the month”.
+
+
+    // var daY = new Date();
+    // var curDatE = daY.getDate();
+    // if (curDatE < 16) {
+    //   document.write("First fifteen days of the month")
+    // }
+    // else {
+    //   document.write("Last days of the month")
+    // }
+
+
+    // 6. Write a program that determines the minutes since
+    // midnight, Jan. 1, 1970 and assigns it to a variable that
+    // hasn't been declared beforehand. Use any variable you like
+    // to represent the Date object.
+
+
+    // var rightNow = new Date("Dec 05, 2015 22:32:23");
+    // document.write("Current Date: " + rightNow);
+    // //rightNow.getTime();
+
+    // var otherDay = new Date("Jan 1, 1970 00:00");
+
+    // var msDiff = otherDay.getTime() + rightNow.getTime();
+    // document.write("<br>Elapsed Milliseconds since Jan 1, 1970: " + msDiff);
+
+    // var diffInDays = msDiff / (1000 * 60 * 60);
+    // document.write("<br>Elapsed Minutes since June 11, 2018: " + diffInDays);
+
+    //     7. Write a program that tests whether it's before noon and
+    // alert “Its AM” else “its PM”.
+
+
+    // var daY = new Date();
+    // var hours = daY.getHours("24-hour format")
+    // if (hours >= 12) {
+    //   document.write("It's PM");
+    // }
+    // else {
+    //   document.write("It's AM");
+    // }
+
+
+
+    //8. Write a program that creates a Date object for the last day
+    // of the last month of 2020 and assigns it to variable named
+    // laterDate.
+
+    // function lastday(year, month) {
+    //   var res = new Date(year, month + 1, 0);
+    //   return res;
+    // }
+    // document.write(lastday(2020, 11));
+
+    // 9. Create a date object of the starting date of this Ramadan
+    // and alert the number of days past since 1st Ramadan?
+    // Note: 1st Ramadan was on June 18, 2015
+
+
+    // var rightNow = new Date();
+    // var otherDay = new Date("June 18, 2015");
+    // var msDiff = rightNow.getTime() - otherDay.getTime();
+    // var diffInDays = msDiff / (1000 * 60 * 60 * 24);
+    // document.write(diffInDays + " days have passed since 1st Ramadan, 2015 ");
+
+    // 10. Write a program that displays in your browser the
+    // seconds that elapsed between the reference date and the
+    // beginning of 2015.
+
+
+    // var rightNow = new Date("Dec 05, 2015 22:50:16");
+    // var otherDay = new Date("Jan 01, 2015");
+    // var msDiff = rightNow.getTime() - otherDay.getTime();
+    // var diffInDaysSeconds = Math.ceil(msDiff / (1000 * 60));
+    // document.write("Our reference date " + rightNow + "," + diffInDaysSeconds + " seconds had passed since beginning of 2015");
+
+    //     11. Create a Date object for the current date and time.
+    // Extract the hours, reset the date object an hour ahead and
+    // finally display the date object in your browser.
+
+    // var rightNow = new Date("Dec 05, 2015 23:50:16");
+    // var otherDay = new Date("Dec 05, 2015 22:50:16");
+    // var msDiff = rightNow.getTime() - otherDay.getTime();
+    // var diffInDaysSeconds = Math.ceil(msDiff / (1000 * 60 * 60));
+    // document.write("Current Date: " + rightNow + "," + diffInDaysSeconds + " hours ago, it was " + otherDay);
+
+
+
+    // 12. Write a program that creates a date object and show the
+    // date in an alert box that is reset to 100 years back?
+
+    // var rightNow = new Date("Dec 05, 2015 23:08:16");
+    // var otherDay = new Date("Dec 05, 1915 23:08:16");
+    // var msDiff = rightNow.getTime() - otherDay.getTime();
+    // var diffInDaysSeconds = Math.ceil(msDiff / (1000 * 60 * 60 * 24 * 365.2425));
+    // document.write("Current Date: " + rightNow + "," + diffInDaysSeconds + " Years back, it was " + otherDay);
+
+    // 13. Write a program to ask the user about his age.Calculate
+    // and show his birth year in your browser.
+
+    // function calculate_age(dob) {
+    //   var diff_ms = Date.now() - dob.getTime();
+    //   var age_dt = new Date(diff_ms);
+
+    //   return Math.abs(age_dt.getUTCFullYear() - 1970);
+    // }
+
+    // alert(calculate_age(new Date(1996, 11, 09)));
+
+
+    //     14. Write a program to generate your K-Electric bill in your
+    // browser. All the amounts should be rounded off to 2
+    // decimal places. Display the following fields:
+    // a. Customer Name
+    // b. Current Month
+    // c. Number of units
+    // d. Charges per unit
+    // e. Net Amount Payable (within Due Date)
+    // f. Late Payment Surcharge
+    // g. Gross Amount Payable (after Due Date)
+    // Where,
+    // Net Amount Payable (within Due Date) = Number of units * Charges per unit
+    // & Gross Amount Payable (after Due Date) = Net Amount + Late Payment Surcharge
+
+    // var customerName = "Muhammad Jahanzaib Khan";
+    // var curMonth = new Date();
+    // var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    // var mon = curMonth.getMonth();
+    // var mont = months[mon];
+    // var noOfUnits = 410;
+    // var chrgsPerUnits = 16;
+    // var latePayment = 350;
+    // var netAmount = noOfUnits * chrgsPerUnits;
+    // var grossAmount = netAmount + latePayment;
+
+    // document.write("<h1>K-Electric Bill</h1><br>Customer Name: " + customerName + "<br>Month: " + mont + "<br>No of Units: " + noOfUnits + "<br>Charges per Units: " + chrgsPerUnits + "<br><br>Net Amount payable (within Due Date): " + netAmount + "<br>Late payment surcharge: " + latePayment + "<br>Gross Amount Payable (after Due Date): " + grossAmount);
+
+
+    // 15. Create a block of code that you can use several times.
+
+    // function abc() {
+    //   var name = "Jahanzaib";
+    //   alert(name);
+    // }
+    // abc();
+    // abc();
+    // abc();
+
+
+    //16. Write a function that displays current date & time in
+    // your browser.
+
+
+    // function curDateTime() {
+    //   var dateTime = new Date();
+    //   return dateTime;
+    // }
+    // document.write(curDateTime());
+
+    //     17. Write a function that takes first & last name and then it
+    // greets the user using his full name.
+
+    // function fullName(firstName, lastName) {
+    //   var gret = document.write("Hello Mr:" + firstName + " " + lastName);
+    //   return gret;
+    // }
+    // var firstName = prompt("Enter Your First Name:");
+    // var lastName = prompt("Enter Your Last Name:");
+    // fullName(firstName, lastName);
+
+    //     18. Write a function that adds two numbers (input by user)
+    // and returns the sum of two numbers.
+
+    // function adding(num1, num2) {
+    //   var sums = num1 + num2;
+    //   return sums;
+    // }
+    // var num1 = Number(prompt("Enter Your First Number:"));
+    // var num2 = Number(prompt("Enter Your Second Number:"));
+    // alert(adding(num1, num2));
+
+    //     19. Calculator:
+    // Write a function that takes three arguments num1, num2
+    // & operator & compute the desired operation. Return and
+    // show the desired result in your browser.
+
+
+    // function calc(num1, num2, oper) {
+
+    //   if (oper === "+") {
+    //     return num1 + num2;
+    //   }
+    //   else if (oper === "-") {
+    //     return num1 - num2;
+    //   }
+    //   else if (oper === "*") {
+    //     return num1 * num2;
+    //   }
+    //   else if (oper === "/") {
+    //     return num1 / num2;
+    //   }
+    //   else {
+    //     alert("Invalid operator:");
+    //   }
+    // }
+    // var num1 = Number(prompt("Enter Your First Number:"));
+    // var num2 = Number(prompt("Enter Your Second Number:"));
+    // var oper = prompt("Enter Your Operator:");
+
+    // alert(calc(num1, num2, oper));
+
+
+    // 20. Write a function that squares its argument.
+
+    // function SquareRoot(num, exp) {
+    //   if (num === 0 && exp === 0) {
+    //     return 1;
+    //   }
+    //   if (exp === 0) {
+    //     return 1;
+    //   }
+    //   if (exp == 1) {
+    //     return num;
+    //   }
+    //   else {
+    //     return num * (SquareRoot(num, exp - 1))
+    //   }
+    // }
+    // var num = Number(prompt("Enter Number"))
+    // var exp = Number(prompt("Enter Number"))
+    // alert(SquareRoot(num, exp));
+
+
+    // 21. Write a function that computes factorial of a number.
+
+    // function fictorials(num) {
+    //   if (num === 0 ) {
+    //     return 1;
+    //   }
+    //   // if (exp === 0) {
+    //   //   return 1;
+    //   // }
+    //   // if (exp == 1) {
+    //   //   return num;
+    //   // }
+    //   else {
+    //     return num * (fictorials(num-1))
+    //   }
+    // }
+    // var num = Number(prompt("Enter Number"))
+    // alert(fictorials(num));
+
+    //     22. Write a function that take start and end number as
+    // inputs & display counting in your browser.
+
+
+    // var first = Number(prompt("Enter First Number: "));
+    // var second = Number(prompt("Enter First Number: "));
+    // function startEnd(first, second) {
+    //   for (i = first; i <= second; i++) {
+    //     document.write(i + "<br>");
+    //   }
+    // }
+    // startEnd(first, second);
+
+
+
+    // 23. Write a nested function that computes hypotenuse of a
+    // right angle triangle.
+    // Hypotenuse2 = Base2 + Perpendicular2
+    // Take base and perpendicular as inputs.
+    // Outer function : calculateHypotenuse()
+    // Inner function: calculateSquare()
+
+
+    // function hypo(basee, perpen) {
+    //   function SquareRoot(basee, perpen) {
+    //     if (num === 0 && exp === 0) {
+    //       return 1;
+    //     }
+    //     if (exp === 0) {
+    //       return 1;
+    //     }
+    //     if (exp == 1) {
+    //       return num;
+    //     }
+    //     else {
+    //       return num * (SquareRoot(num, exp - 1))
+    //     }
+    //   }
+    //   var num = Number(prompt("Enter Number"))
+    //   var exp = Number(prompt("Enter Number"))
+    //   alert(SquareRoot(num, exp));
+    // }
+
+
+    //     24. Write a function that calculates the area of a rectangle.
+    //  A = width * height
+    //  Pass width and height in following manner:
+    // i. Arguments as value
+    // ii. Arguments as variables
+
+    // function areaOfRectangle(widt, heigh) {
+    //   var a = widt * heigh;
+    //   return a;
+    // }
+    // var widt = Number(prompt("Enter Number"))
+    // var heigh = Number(prompt("Enter Number"))
+    // alert(areaOfRectangle(widt, heigh));
+
+    //     25. Write a JavaScript function that checks whether a passed
+    // string is palindrome or not?
+    // A palindrome is word, phrase, or sequence that reads the same backward as
+    // forward, e.g., madam
+
+    function palind(str) {
+      var lowRegStr = str.toLowerCase();
+      var reverseStr = lowRegStr.split('').reverse().join('');
+      return reverseStr === lowRegStr;
+    }
+    alert(palind("CIvic"));
+
+    // 26. Write a JavaScript function that accepts a string as a
+    // parameter and converts the first letter of each word of the
+    // string in upper case.
+    // EXAMPLE STRING : 'the quick brown fox'
+    // EXPECTED OUTPUT : 'The Quick Brown Fox'
+
+
+    // function titleCase(str) {
+    //   var abc = str.replace(/\b\w/g, l => l.toUpperCase())
+    //   return abc;
+    // }
+
+    // alert(titleCase("the quick brown fox"));
+
+
+    //     27. Write a JavaScript function that accepts a string as a
+    // parameter and find the longest word within the string.
+    // EXAMPLE STRING : 'Web Development Tutorial'
+    // EXPECTED OUTPUT : 'Development'
+
+    // function findLongestWord(str) {
+    //   var strSplit = str.split(' ');
+    //   var longestWord = 0;
+    //   var word;
+    //   for (var i = 0; i < strSplit.length; i++) {
+    //     if (strSplit[i].length > longestWord) {
+    //       longestWord = strSplit[i].length;
+    //       word = strSplit[i];
+    //     }
+    //   }
+    //   return word;
+    // }
+    // alert(findLongestWord("Web Development Tutorial"));
+
+    //     28. Write a JavaScript function that accepts two arguments, a
+    // string and a letter and the function will count the number of
+    // occurrences of the specified letter within the string.
+    // Sample arguments : 'JSResourceS.com', 'o'
+
+    // function count(main_str, sub_str) {
+    //   main_str += '';
+    //   sub_str += '';
+
+    //   if (sub_str.length <= 0) {
+    //     return main_str.length + 1;
+    //   }
+
+    //   subStr = sub_str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    //   return (main_str.match(new RegExp(subStr, 'gi')) || []).length;
+    // }
+
+    // alert(count("JSResourceS.com", 'o'));
+
+  </script>
+</head>
+
+<body></body>
+
+</html>

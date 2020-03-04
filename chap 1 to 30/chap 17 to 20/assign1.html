@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // var a = 1;
+        // for (a = 1; a <= 10; a++) {
+        //     document.write(a + "<br>");
+        // }
+
+        // var num = + prompt("Enter a number to show its multiplication table");
+        // var len = + prompt("Enter length multiplication table");
+        // for (i = 1; i <= len; i++) {
+        //     document.write(num + " x " + i + " = " + (num * i) + "<br>");
+        // }
+
+        // var fruit = ['Apple', 'Banana', 'Mango', 'Orange', 'Strawberry'];
+
+        // for (i = 0; i < fruit.length; i++) {
+        //     document.write(fruit[i] + "<br>");
+        // }
+        // document.write("<br>");
+        // for (i = 0; i < fruit.length; i++) {
+        //     document.write("Element at index " + i + " is " + fruit[i] + "<br>");
+        // }
+
+        // document.write("<h2>Counting </h2><br>");
+        // var x = 1;
+        // for (x = 1; x <= 15; x++) {
+        //     document.write(x + ",");
+        // }
+        // document.write("<br>");
+        // document.write("<h2>Reverse Counting </h2><br>");
+        // document.write("<br>");
+
+        // var y = 10;
+        // for (y = 10; y >= 1; y--) {
+        //     document.write(y + ",");
+        // }
+        // document.write("<br>");
+        // document.write("<h2>Even</h2><br>");
+        // document.write("<br>");
+        // var s = 0;
+        // for (s = 0; s <= 20; s++) {
+        //     document.write(s + ",");
+        //     s++;
+        // }
+        // document.write("<br>");
+        // document.write("<h2>Odd </h2><br>");
+        // document.write("<br>");
+        // var p = 1;
+        // for (p = 1; p <= 20; p++) {
+        //     document.write(p + ",");
+        //     p++;
+        // }
+        // document.write("<br>");
+        // document.write("<h2>Series </h2><br>");
+        // document.write("<br>");
+        // var s = 2;
+        // for (s = 2; s <= 20; s++) {
+        //     document.write(s + "k,");
+        //     s++;
+
+
+
+
+        // var A = ['cake', 'apple pie', 'cookie', 'chips', 'patties'];
+        // var b = prompt("Welcome to ABC Bakery.What do you want  to order sir/ma'am");
+        // var bol = "yes";
+        // for (i = 0; i < A.length; i++) {
+        //     if (b == A[i]) {
+        //         document.write(A[i] + " is <b> available </b> at index " + i + " in our bakery");
+        //         bol = "no";
+        //     }
+        // }
+        // if (bol === "yes") {
+        //     document.write("We are sorry. " + b + " is <b>not available </b>in our bakery")
+        // }
+
+
+        var A = [24, 53, 78, 91, 12];
+        // var largest = 0;
+
+        // for (i = 0; i <= largest; i++) {
+        //     if (A[i] > largest) {
+        //         var largest = A[i];
+        //     }
+        // }
+        // document.write("Array items: " + A);
+        // document.write("<br>The largest number is " + largest);
+
+
+        // var smallest = A[0];
+
+        // for (var i = 1; i < A.length; i++) {
+
+
+        //     if (A[i] < smallest) {
+        //         smallest = A[i];
+        //     }
+
+        //     //console.log(largest);
+        //     document.write(smallest);
+
+        // }
+        var numbers = [2, 4, 9, 2, 0, 16, 24];
+
+        var sorted = numbers.slice().sort(function (a, b) {
+            return a - b;
+        });
+
+        var smallest = sorted[0],
+            secondSmallest = sorted[1],
+            secondLargest = sorted[sorted.length - 2],
+            largest = sorted[sorted.length - 1];
+
+        alert('Smallest: ' + smallest);
+        alert('Second Smallest: ' + secondSmallest);
+        alert('Second Largest: ' + secondLargest);
+        alert('Largest: ' + largest);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

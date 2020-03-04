@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num1 = +prompt("Enter first Number");
+        var num2 = +prompt("Enter second Number");
+        var operate = prompt("Select Your calculation method\n1.Additon for +\n2.Substraction for -\n3.Multiplication for *\n4.Division for /\n5.Modulus for %");
+        var ad = num1 + num2;
+        var sb = num1 - num2;
+        var mul = num1 * num2;
+        var di = num1 / num2;
+        var md = num1 % num2;
+
+        if (operate === "1") {
+            alert("This is addition Method " + num1 + " + " + num2 + "=" + ad);
+        }
+        else if (operate === "2") {
+            alert("This is substraction Method " + num1 + " - " + num2 + "=" + sb);
+        }
+        else if (operate === "3") {
+            alert("This is multiplication Method " + num1 + " * " + num2 + "=" + mul);
+        }
+        else if (operate === "4") {
+            alert("This is division Method " + num1 + " / " + num2 + "=" + di);
+        }
+        else if (operate === "5") {
+            alert("This is Modulus Method " + num1 + " % " + num2 + "=" + md);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

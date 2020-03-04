@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row mt-4 mb-4" style="background-color: aquamarine; padding-top: 0;">
+            <form action="">
+                <h2>Add Record</h2>
+                <table>
+                    <tr>
+                        <td><label for="">Index No :</label></td>
+                        <td><input type="text" id="indexNo" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">ID :</label></td>
+                        <td><input type="text" id="std-id"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Name :</label></td>
+                        <td><input type="text" id="std-name"></td>
+                    </tr>
+                </table>
+                <button class="btn-warning btn btn-" onclick="addRow(); return false;">Add</button>
+            </form>
+        </div>
+        <div class="row">
+            <table class="auto-index table table-striped" id="myTable" width="400px" style="text-align: center; padding: 2px; margin: 0px;">
+                <thead id="tHead"></thead>
+                <tbody id="tBody">
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="row mt-4 mb-4" id="hiddenDiv" style="background-color: aquamarine; visibility: hidden; padding-top: 0;">
+            <form action="">
+                <h2>Edit Record</h2>
+                <table>
+                    <tr>
+                        <td><label for="">Index No :</label></td>
+                        <td><input type="text" id="indexNo1" disabled></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">ID :</label></td>
+                        <td><input type="text" id="std-id1"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Name :</label></td>
+                        <td><input type="text" id="std-name1"></td>
+                    </tr>
+                </table>
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn-warning btn btn-" onclick="updateRow(); modalVisible();">Update</button>
+            </form>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    <div id="modal-hidden" style="visibility: hidden;">
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Update Record</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Your record has been update.</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var indexNo = [0, 1, 2, 3, 4];
+        var stdName = ["Jahanzaib", "Tabish", "Umair", "Zeeshan", "Tuaha"];
+        var stdID = [12, 32, 33, 32, 11]
+        var tBodyId = document.getElementById('tBody');
+        var tHeadId = document.getElementById('tHead');
+        function createTable() {
+
+            tHeadId.innerHTML = " <tr class='thead-dark'><th>INDEX</th><th>NAME</th><th>ID</th><th colspan='2'></th> ";
+
+            for (var i = 0; i < stdName.length; i++) {
+                tBodyId.innerHTML += "<tr><td id = 'abc'>" + i + "</td><td>" + stdName[i] + "</td><td>" + stdID[i] + "</td><td><button id='dlt' class='btn btn-danger btn-md' onClick= deleteRow(" + i + ")>Delete</button></td><td><button id=" + i + " class='btn btn-info btn-md' onClick=editRow(id)>Edit</button></td></tr>"
+            }
+        }
+
+        createTable();
+
+        function deleteRow(rowNum) {
+            stdName.splice(rowNum, 1);
+            stdID.splice(rowNum, 1);
+            tBodyId.innerHTML = null;
+            createTable();
+        }
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(table.firstElementChild.childElementCount);
+
+            var ind = document.getElementById('tBody').lastChild.firstChild.firstChild.nodeValue;
+            var sId = document.getElementById("std-id").value;
+            var sName = document.getElementById("std-name").value;
+
+
+            tBodyId.innerHTML = null;
+            indexNo.push(Number(ind) + 1);
+            stdName.push(sName);
+            stdID.push(sId);
+
+            createTable();
+
+            document.getElementById("indexNo").value = "";
+            document.getElementById("std-id").value = "";
+            document.getElementById("std-name").value = "";
+        }
+
+        function editRow(indxId) {
+            var hideDiv = document.getElementById("hiddenDiv");
+            hideDiv.style.visibility = "visible";
+            var table = document.getElementsByTagName("table")[1];
+            var tbody = table.getElementsByTagName("tbody")[0];
+
+
+            var index2 = indexNo.slice(indxId, Number(indxId) + 1);
+            var idd = stdID.slice(indxId, Number(indxId) + 1);
+            var namee = stdName.slice(indxId, Number(indxId) + 1);
+
+            document.getElementById('indexNo1').value = index2;
+            document.getElementById('std-id1').value = idd;
+            document.getElementById('std-name1').value = namee;
+        }
+
+        function updateRow(abcd) {
+            var hideDiv = document.getElementById("hiddenDiv");
+            hideDiv.style.visibility = "hidden";
+            var uId = document.getElementById('std-id1').value;
+            var uName = document.getElementById('std-name1').value;
+            var indx = document.getElementById('indexNo1').value;
+
+            var a = stdName.slice(indx, Number(indx) + 1);
+            var b = stdID.slice(indx, Number(indx) + 1);
+            stdName[indx] = uName;
+            stdID[indx] = uId;
+            tBodyId.innerHTML = null;
+            createTable();
+
+        }
+        function modalVisible() {
+            var getModalId = document.getElementById('modal-hidden');
+            getModalId.style.visibility = "visible";
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

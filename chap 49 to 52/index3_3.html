@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            counter-reset: Serial;
+            /* Set the Serial counter to 0 */
+        }
+
+
+        tbody.tr tr td:first-child:before {
+            counter-increment: Serial;
+            /* Increment the Serial counter */
+            content: counter(Serial) ".";
+            /* Display the counter */
+        }
+
+        #hiddenDiv {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="">Index No :</label></td>
+                    <td><input type="text" id="indexNo"></td>
+                </tr>
+                <tr>
+                    <td><label for="">ID :</label></td>
+                    <td><input type="text" id="std-id"></td>
+                </tr>
+                <tr>
+                    <td><label for="">First Name :</label></td>
+                    <td><input type="text" id="std-name"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Last Name</label></td>
+                    <td><input type="text" id="std-lastName"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Date Of Birth</label></td>
+                    <td><input type="text" id="DOB"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">City</label></td>
+                    <td><input type="text" id="city"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Class</label></td>
+                    <td><input type="text" id="Class"></td><br><br>
+                </tr>
+
+            </table>
+
+            <button onclick="addRow(); return false;">Add</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="width: 500px">
+        <table border="1" id="myTable" cellspacing="0px" cellpadding="0px" width="600px" style="text-align: center;">
+            <tbody class="tr">
+                <tr>
+                    <th>Index</th>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>DOB</th>
+                    <th>City</th>
+                    <th>Class</th>
+                    <th colspan="2" width="90px"></th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div id="hiddenDiv">
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="">Index No :</label></td>
+                    <td><input type="text" id="indexNo1"></td>
+                </tr>
+                <tr>
+                    <td><label for="">ID :</label></td>
+                    <td><input type="text" id="std-id1"></td>
+                </tr>
+                <tr>
+                    <td><label for="">First Name :</label></td>
+                    <td><input type="text" id="std-name1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Last Name</label></td>
+                    <td><input type="text" id="std-lastName1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Date Of Birth</label></td>
+                    <td><input type="text" id="DOB1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">City</label></td>
+                    <td><input type="text" id="city1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Class</label></td>
+                    <td><input type="text" id="Class1"></td><br><br>
+                </tr>
+
+            </table>
+            <button onclick="updateData();">Update</button>
+        </form>
+    </div>
+
+
+    <script>
+
+
+        function updateData(e) {
+            e = e || window.event;
+            var data = [];
+            var target = e.srcElement || e.target;
+            while (target && target.nodeName !== "TR") {
+                target = target.parentNode;
+            }
+            if (target) {
+                var cells = target.getElementsByTagName("td");
+                for (var i = 0; i < cells.length - 2; i++) {
+                    data.push(cells[i].innerHTML);
+                }
+            }
+        }
+
+
+
+        function editRow(e) {
+            var hideDiv = document.getElementById("hiddenDiv");
+            hideDiv.style.visibility = "visible";
+            var table = document.getElementsByTagName("table")[1];
+            var tbody = table.getElementsByTagName("tbody")[1];
+
+            e = e || window.event;
+            var data = [];
+            var target = e.srcElement || e.target;
+            while (target && target.nodeName !== "TR") {
+                target = target.parentNode;
+            }
+            if (target) {
+                var cells = target.getElementsByTagName("td");
+                for (var i = 0; i < cells.length - 2; i++) {
+                    data.push(cells[i].innerHTML);
+                }
+            }
+            document.getElementById("indexNo1").value = data[0];
+            document.getElementById("std-id1").value = data[1];
+            document.getElementById("std-name1").value = data[2];
+            document.getElementById("std-lastName1").value = data[3];
+            document.getElementById("DOB1").value = data[4];
+            document.getElementById("city1").value = data[5];
+            document.getElementById("Class1").value = data[6];
+        };
+
+        function SomeDeleteRowFunction() {
+            var td = event.target.parentNode;
+            var tr = td.parentNode;
+
+            tr.parentNode.removeChild(tr);
+        }
+
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(table.firstElementChild.childElementCount);
+
+            var sId = document.getElementById("std-id").value;
+            var sName = document.getElementById("std-name").value;
+            var sLastName = document.getElementById("std-lastName").value;
+            var sDOB = document.getElementById("DOB").value;
+            var sCity = document.getElementById("city").value;
+            var sClass = document.getElementById("Class").value;
+
+            var indx = row.insertCell(0);
+            var stdId = row.insertCell(1);
+            var stdFName = row.insertCell(2);
+            var stdLName = row.insertCell(3);
+            var stdDOB = row.insertCell(4);
+            var stdCity = row.insertCell(5);
+            var stdCls = row.insertCell(6);
+            var editButton = row.insertCell(7);
+            var deleteButton = row.insertCell(8);
+
+            stdId.innerHTML = sId;
+            stdFName.innerHTML = sName;
+            stdLName.innerHTML = sLastName;
+            stdDOB.innerHTML = sDOB;
+            stdCity.innerHTML = sCity;
+            stdCls.innerHTML = sClass;
+
+            var button = document.createElement('button');
+            button.innerText = "Edit";
+            button.onclick = editRow;
+            editButton.appendChild(button);
+
+            var button = document.createElement('button');
+            button.innerText = "Delete";
+            button.onclick = SomeDeleteRowFunction;
+            deleteButton.appendChild(button);
+
+            document.getElementById("std-id").value = "";
+            document.getElementById("std-name").value = "";
+            document.getElementById("std-lastName").value = "";
+            document.getElementById("DOB").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("Class").value = "";
+        }
+    </script>
+</body>
+</body>
+
+</html>

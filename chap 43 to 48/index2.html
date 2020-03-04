@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <style>
+        body {
+            counter-reset: Serial;
+        }
+
+        tr td:first-child:before {
+            counter-increment: Serial;
+            content: counter(Serial)".";
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-4" style="width: 500px; float: left;">
+        <table class="auto-index table table-striped" id="myTable" width="400px" style="text-align: center; padding: 2px; margin: 0px;">
+            <tbody>
+                <tr class="thead-dark">
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Qualification</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Jhone</td>
+                    <td>Graduate</td>
+                    <td><button type="button" class="btn btn-secondary btn-sm" onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn-primary btn-md mt-5" onclick="addRow(this)">Add</button>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function SomeDeleteRowFunction() {
+            var td = event.target.parentNode;
+            var tr = td.parentNode;
+            tr.parentNode.removeChild(tr);
+        }
+
+
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(table.firstElementChild.childElementCount);
+
+            var indx = row.insertCell(0);
+            var stdName = row.insertCell(1);
+            var cls = row.insertCell(2);
+            var x = row.insertCell(3);
+
+            stdName.innerHTML = prompt("Enter Your Name :");
+            cls.innerHTML = prompt("Enter Your Class :");
+
+            var button = document.createElement('button');;
+            button.innerText = "Delete";
+            button.className = "btn btn-secondary btn-sm";
+            button.onclick = SomeDeleteRowFunction;
+            x.appendChild(button);
+
+
+
+        }
+    </script>
+</body>
+
+</html>

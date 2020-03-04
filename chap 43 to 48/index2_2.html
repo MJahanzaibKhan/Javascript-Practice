@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            counter-reset: Serial;
+            /* Set the Serial counter to 0 */
+        }
+
+
+        tr td:first-child:before {
+            counter-increment: Serial;
+            /* Increment the Serial counter */
+            content: counter(Serial) ".";
+            /* Display the counter */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="width: 500px; float: left;">
+        <table border="1" id="myTable" cellspacing="0px" cellpadding="0px" width="400px" style="text-align: center;">
+            <tbody>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Qualification</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Jhone</td>
+                    <td>Graduate</td>
+                    <td><button onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Doe</td>
+                    <td>9</td>
+                    <td><button onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Mark</td>
+                    <td>10</td>
+                    <td><button onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>James</td>
+                    <td>8</td>
+                    <td><button type="button" class="btn btn-secondary btn-sm" onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <button onclick="addRow(this)">Add</button>
+    </div>
+
+
+    <script>
+        function SomeDeleteRowFunction() {
+            var td = event.target.parentNode;
+            var tr = td.parentNode;
+
+            tr.parentNode.removeChild(tr);
+        }
+
+
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(table.firstElementChild.childElementCount);
+
+            var indx = row.insertCell(0);
+            var stdName = row.insertCell(1);
+            var cls = row.insertCell(2);
+            var deleteButton = row.insertCell(3);
+
+            stdName.innerHTML = prompt("Enter Your Name :");
+            cls.innerHTML = prompt("Enter Your Class :");
+
+            var button = document.createElement('button');
+
+            button.innerText = "Delete";
+            button.onclick = SomeDeleteRowFunction;
+            deleteButton.appendChild(button);
+        }
+    </script>
+</body>
+
+</html>

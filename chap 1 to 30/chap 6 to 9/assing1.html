@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        // // one
+
+        var a = 10;
+        document.write("Result<br>");
+        document.write("The value of a is: "+a+"<br>");
+
+        document.write("............................<br><br>");
+
+        document.write("The value of ++a is: "+ ++a +"<br>");
+
+        document.write("Now the value of a is: "+ a +"<br><br>");
+
+        document.write("The value of a++ is: "+ a++ +"<br>");
+
+        document.write("Now the value of a is: "+ a +"<br><br>");
+
+        document.write("The value of --a is: "+ --a +"<br>");
+
+        document.write("Now the value of a is: "+ a +"<br><br>");
+
+        document.write("The value of a-- is: "+ a-- +"<br>");
+
+        document.write("Now the value of a is: "+ a +"<br>");
+
+        // // Two
+
+        var a = 2;
+        var b = 1;
+        var result1 = --a - --b + ++b + b--;//3
+
+        var a = 2;
+        var b = 1;
+        var result2 = --a;//1
+
+        var a = 2;
+        var b = 1;
+        var result3 = --a - --b;//1
+
+        var a = 2;
+        var b = 1;
+        var result4 = --a - --b + ++b;//2
+
+        var a = 2;
+        var b = 1;
+        var result5 = --a - --b + ++b + b--;//3
+
+        var a = 2;
+        var b = 1;
+        document.write("a is: " + a);
+        document.write("<br>b is: " + b);
+        document.write("<br>Result 1 is: "+result1);
+        document.write("<br>Result 2 is: "+result2);
+        document.write("<br>Result 3 is: "+result3);
+        document.write("<br>Result 4 is: "+result4);
+        document.write("<br>Result 5 is: "+result5);
+
+            // .......................................................................
+
+        var sub1 = "English";
+        var sub2 = "Math";
+        var sub3 = "Urdu";
+        var total1 = 100;
+        var total2 = 100;
+        var total3 = 100;
+        var obtSub1 = 54;
+        var obtSub2 = 54;
+        var obtSub3 = 48;
+        var per1 = obtSub1 / total1 * 100;
+        var per2 = obtSub2 / total2 * 100;
+        var per3 = obtSub3 / total3 * 100;
+        var total = total1 + total2 + total3;
+        var totalObt = obtSub1 + obtSub2 + obtSub3;
+        var par = totalObt / total * 100;
+
+        document.write(
+            "<table> <tr><th>Subjects</th><th>Total Marks</th><th>Otained Marks</th><th>Percentage</th></tr>         <tr><td>"+sub1+"</td><td>"+total1+"</td><td>"+obtSub1+"</td><td>"+per1+"%</td></tr>       <tr><td>"+sub2+"</td><td>"+total2+"</td><td>"+obtSub2+"</td><td>"+per2+"%</td></tr>           <tr><td>"+sub3+"</td><td>"+total3+"</td><td>"+obtSub3+"</td><td>"+per3+"%</td></tr>            <tr><th></th><th>"+total+"</th><th>"+totalObt+"</th><th>"+par+"%</th></tr>  </table>"
+        )
+      
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

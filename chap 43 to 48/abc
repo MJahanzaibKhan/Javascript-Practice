@@ -1,0 +1,53 @@
+
+
+
+
+        <div class="container mt-4" style="width: 500px; float: left;">
+        <table class="table table-striped" id="myTable" width="400px" style="text-align: center; padding: 2px; margin: 0px;">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Qualification</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td></td>
+                    <td>Jhone</td>
+                    <td>Graduate</td>
+                    <td><button type="button" class="btn btn-secondary btn-sm" onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <button class="btn-primary btn-md mt-5" onclick="addRow(this)">Add</button>
+    </div>
+
+
+
+
+                        <!-- </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Doe</td>
+                            <td>9</td>
+                            <td><button type="button" class="btn btn-secondary btn-sm" onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mark</td>
+                            <td>10</td>
+                            <td><button type="button" class="btn btn-secondary btn-sm" onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+        
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>James</td>
+                            <td>8</td>
+                            <td><button type="button" class="btn btn-secondary btn-sm" onclick="SomeDeleteRowFunction(this)">Delete</button></td>
+        
+                        </tr> -->

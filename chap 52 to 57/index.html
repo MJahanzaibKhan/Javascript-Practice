@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=dvi, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgSize {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding-top:20px; ">
+        <div class="row">
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img1 " src="imgs/img1.jpg " alt=" "></div>
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img2 " src="imgs/img2.jpg " alt=" "></div>
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img3 " src="imgs/img3.jpg " alt=" "></div>
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img4 " src="imgs/img4.jpg " alt=" "></div>
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img5 " src="imgs/img5.jpg " alt=" "></div>
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img6 " src="imgs/img6.jpg " alt=" "></div>
+            <div class="col "><img class="imgSize " onClick="reply_click(this.id)" id="img7 " src="imgs/img7.jpg " alt=" "></div>
+        </div>
+    </div>
+    <div class="container " style=" margin-top: 10px; background-color: antiquewhite; ">
+        <div class="container " style="width: 700px;height: 400px; ">
+            <img class=" " id="newImg" src="imgs/img1.jpg " alt=" " style="width: 700px;height: 400px; ">
+        </div>
+    </div>
+
+    <script>
+        function reply_click(clicked_id) {
+            let imgId = document.getElementById(clicked_id);
+            document.getElementById("newImg").src = imgId.src;
+
+        }
+
+
+    </script>
+
+
+    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css " integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm "
+        crossorigin="anonymous ">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+        crossorigin="anonymous "></script>
+</body>
+
+</html>

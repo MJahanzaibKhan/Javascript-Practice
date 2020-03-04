@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        var colorName = ["Red", "Green", "Blue", "Purple", "sky blue", "orange", "yellow", "pink", "Brown"];
+        alert(colorName);
+        var inp1 = prompt("Enter color name than add beginning array");
+        colorName.unshift(inp1);
+        alert(colorName);
+        var inp2 = prompt("Enter color name than add last array");
+        colorName.push(inp2);
+        alert(colorName);
+        var inp3 = prompt("Enter color name than add beginning array");
+        var inp4 = prompt("Enter color name than add beginning array");
+        colorName.unshift(inp3, inp4);
+        alert(colorName);
+        colorName.shift();
+        alert(colorName);        
+        colorName.pop();
+        alert(colorName);
+        inp4 = +prompt("Enter color position ");
+        colorName.splice(inp4,3,'g','h','i','j','k');
+        alert(colorName);
+        colorName.splice(3,3);
+        alert(colorName);
+        
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

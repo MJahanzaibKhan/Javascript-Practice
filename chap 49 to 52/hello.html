@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="table_script.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Age</th>
+            </tr>
+
+            <tr id="row1">
+                <td id="name_row1">Ankit</td>
+                <td id="country_row1">India</td>
+                <td id="age_row1">20</td>
+                <td>
+                    <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                    <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                    <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                </td>
+            </tr>
+
+            <tr id="row2">
+                <td id="name_row2">Shawn</td>
+                <td id="country_row2">Canada</td>
+                <td id="age_row2">26</td>
+                <td>
+                    <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                    <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                    <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="name_row3">Rahul</td>
+                <td id="country_row3">India</td>
+                <td id="age_row3">19</td>
+                <td>
+                    <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                    <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                    <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="new_name"></td>
+                <td><input type="text" id="new_country"></td>
+                <td><input type="text" id="new_age"></td>
+                <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+            </tr>
+
+        </table>
+    </div>
+    <script>
+        function edit_row(no) {
+            document.getElementById("edit_button" + no).style.display = "none";
+            document.getElementById("save_button" + no).style.display = "block";
+
+            var name = document.getElementById("name_row" + no);
+            var country = document.getElementById("country_row" + no);
+            var age = document.getElementById("age_row" + no);
+
+            var name_data = name.innerHTML;
+            var country_data = country.innerHTML;
+            var age_data = age.innerHTML;
+
+            name.innerHTML = "<input type='text' id='name_text" + no + "' value='" + name_data + "'>";
+            country.innerHTML = "<input type='text' id='country_text" + no + "' value='" + country_data + "'>";
+            age.innerHTML = "<input type='text' id='age_text" + no + "' value='" + age_data + "'>";
+        }
+
+        function save_row(no) {
+            var name_val = document.getElementById("name_text" + no).value;
+            var country_val = document.getElementById("country_text" + no).value;
+            var age_val = document.getElementById("age_text" + no).value;
+
+            document.getElementById("name_row" + no).innerHTML = name_val;
+            document.getElementById("country_row" + no).innerHTML = country_val;
+            document.getElementById("age_row" + no).innerHTML = age_val;
+
+            document.getElementById("edit_button" + no).style.display = "block";
+            document.getElementById("save_button" + no).style.display = "none";
+        }
+
+        function delete_row(no) {
+            document.getElementById("row" + no + "").outerHTML = "";
+        }
+
+        function add_row() {
+            var new_name = document.getElementById("new_name").value;
+            var new_country = document.getElementById("new_country").value;
+            var new_age = document.getElementById("new_age").value;
+
+            var table = document.getElementById("data_table");
+            var table_len = (table.rows.length) - 1;
+            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='country_row" + table_len + "'>" + new_country + "</td><td id='age_row" + table_len + "'>" + new_age + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'> <input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
+
+            document.getElementById("new_name").value = "";
+            document.getElementById("new_country").value = "";
+            document.getElementById("new_age").value = "";
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- 
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #hiddenDiv {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="">Index No :</label></td>
+                    <td><input type="text" id="indexNo"></td>
+                </tr>
+                <tr>
+                    <td><label for="">ID :</label></td>
+                    <td><input type="text" id="std-id"></td>
+                </tr>
+                <tr>
+                    <td><label for="">First Name :</label></td>
+                    <td><input type="text" id="std-name"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Last Name</label></td>
+                    <td><input type="text" id="std-lastName"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Date Of Birth</label></td>
+                    <td><input type="text" id="DOB"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">City</label></td>
+                    <td><input type="text" id="city"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Class</label></td>
+                    <td><input type="text" id="Class"></td><br><br>
+                </tr>
+
+            </table>
+
+            <button onclick="addRow(); return false;">Add</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="width: 500px">
+        <table border="1" id="myTable" cellspacing="0px" cellpadding="0px" width="600px" style="text-align: center;">
+            <tbody class="tr">
+                <tr>
+                    <th>Index</th>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>DOB</th>
+                    <th>City</th>
+                    <th>Class</th>
+                    <th colspan="2" width="90px"></th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div id="hiddenDiv">
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="">Index No :</label></td>
+                    <td><input type="text" id="indexNo1"></td>
+                </tr>
+                <tr>
+                    <td><label for="">ID :</label></td>
+                    <td><input type="text" id="std-id1"></td>
+                </tr>
+                <tr>
+                    <td><label for="">First Name :</label></td>
+                    <td><input type="text" id="std-name1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Last Name</label></td>
+                    <td><input type="text" id="std-lastName1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Date Of Birth</label></td>
+                    <td><input type="text" id="DOB1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">City</label></td>
+                    <td><input type="text" id="city1"></td><br><br>
+                </tr>
+                <tr>
+                    <td><label for="">Class</label></td>
+                    <td><input type="text" id="Class1"></td><br><br>
+                </tr>
+
+            </table>
+            <button onclick="">Update</button>
+        </form>
+    </div>
+
+
+    <script>
+
+
+        function updateData(no) {
+
+        }
+
+
+
+        function editRow(e) {
+            var hideDiv = document.getElementById("hiddenDiv");
+            hideDiv.style.visibility = "visible";
+            var table = document.getElementsByTagName("table")[1];
+            var tbody = table.getElementsByTagName("tbody")[1];
+
+            e = e || window.event;
+            var data = [];
+            var target = e.srcElement || e.target;
+            while (target && target.nodeName !== "TR") {
+                target = target.parentNode;
+            }
+            if (target) {
+                var cells = target.getElementsByTagName("td");
+                for (var i = 0; i < cells.length - 2; i++) {
+                    data.push(cells[i].innerHTML);
+                }
+            }
+            document.getElementById("indexNo1").value = data[0];
+            document.getElementById("std-id1").value = data[1];
+            document.getElementById("std-name1").value = data[2];
+            document.getElementById("std-lastName1").value = data[3];
+            document.getElementById("DOB1").value = data[4];
+            document.getElementById("city1").value = data[5];
+            document.getElementById("Class1").value = data[6];
+        };
+
+        function SomeDeleteRowFunction() {
+            var td = event.target.parentNode;
+            var tr = td.parentNode;
+
+            tr.parentNode.removeChild(tr);
+        }
+
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(table.firstElementChild.childElementCount);
+
+            var ind = document.getElementById("indexNo").value;
+            var sId = document.getElementById("std-id").value;
+            var sName = document.getElementById("std-name").value;
+            var sLastName = document.getElementById("std-lastName").value;
+            var sDOB = document.getElementById("DOB").value;
+            var sCity = document.getElementById("city").value;
+            var sClass = document.getElementById("Class").value;
+
+            var indx = row.insertCell(0);
+            var stdId = row.insertCell(1);
+            var stdFName = row.insertCell(2);
+            var stdLName = row.insertCell(3);
+            var stdDOB = row.insertCell(4);
+            var stdCity = row.insertCell(5);
+            var stdCls = row.insertCell(6);
+            var editButton = row.insertCell(7);
+            var deleteButton = row.insertCell(8);
+
+            indx.innerHTML = ind;
+            stdId.innerHTML = sId;
+            stdId.innerHTML = sId;
+            stdFName.innerHTML = sName;
+            stdLName.innerHTML = sLastName;
+            stdDOB.innerHTML = sDOB;
+            stdCity.innerHTML = sCity;
+            stdCls.innerHTML = sClass;
+
+            var button = document.createElement('button');
+            button.innerText = "Edit";
+            button.onclick = editRow;
+            editButton.appendChild(button);
+
+            var button = document.createElement('button');
+            button.innerText = "Delete";
+            button.onclick = SomeDeleteRowFunction;
+            deleteButton.appendChild(button);
+
+            document.getElementById("std-id").value = "";
+            document.getElementById("std-name").value = "";
+            document.getElementById("std-lastName").value = "";
+            document.getElementById("DOB").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("Class").value = "";
+        }
+    </script>
+</body>
+</body>
+
+</html> -->
+
+
+<!-- body {
+    counter-reset: Serial;
+    /* Set the Serial counter to 0 */
+}
+
+
+tbody.tr tr td:first-child:before {
+    counter-increment: Serial;
+    /* Increment the Serial counter */
+    content: counter(Serial) ".";
+    /* Display the counter */
+} -->

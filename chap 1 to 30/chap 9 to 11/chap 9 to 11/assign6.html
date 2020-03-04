@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var totalMarks=300;
+
+        var getMarks = +prompt("Enter Your Obtained marks: ");
+
+        var getPercent = getMarks/totalMarks*100 ;
+
+        document.write("Total makrs: " +totalMarks);
+
+        document.write("<br>Makrs Obtain: " +getMarks);
+
+        document.write("<br>Makrs Obtain: " +getMarks);
+
+        document.write("<br>Percentage: " +getPercent + "%"); 
+        console.log(getPercent)
+
+        if (getPercent >= 80) 
+        {
+            document.write("<br>Grade : A-one");
+            document.write("<br>Remarks : Excellent");
+        }
+
+        else if (getPercent >= 70) 
+        {
+            document.write("<br>Grade : A");
+            document.write("<br>Remarks : Good");
+        }   
+
+        else if (getPercent >= 60) 
+        {
+            document.write("<br>Grade : B");
+            document.write("<br>Remarks : You need to improve");
+        } 
+
+        else if (getPercent < 60) 
+        {
+            document.write("<br>Grade : Fail");
+            document.write("<br>Remarks : Sorry");
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
